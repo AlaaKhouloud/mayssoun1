@@ -1,0 +1,68 @@
+﻿@model finalproject.Models.Client
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<h2>Index</h2>
+
+    <p> @Html.ActionLink("Create New", "Create") </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.login)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.motPasse)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.prenom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ville)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tel)
+                </th>
+                <th></th>
+            </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.motPasse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ville)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tel)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.numClient }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.numClient }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.numClient })
+                </td>
+            </tr>
+        }
+
+        </table>
